@@ -1,3 +1,5 @@
+mod chapter09;
+
 fn main() {
-    println!("Hello, world!");
+    chapter09::main();
 }
