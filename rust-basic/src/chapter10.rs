@@ -15,6 +15,20 @@ pub fn main() {
 
     let result = largest(&char_list);
     println!("The largest char is {result}");
+
+    let integer_point = Point { x: 5, y: 10 };
+    println!("integer_point.x = {}", integer_point.x());
+}
+
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+impl<P> Point<P> {
+    fn x(&self) -> &P {
+        &self.x
+    }
 }
 
 fn largest<T: PartialOrd>(list: &[T]) -> &T {
