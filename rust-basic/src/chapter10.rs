@@ -31,7 +31,11 @@ pub fn main() {
 
 // Example trait definition
 trait Summary {
-    fn summarize(&self) -> String;
+    fn summarize_author(&self) -> String;
+
+    fn summarize(&self) -> String {
+        format!("(Read more from {}...)", self.summarize_author())
+    }
 }
 
 struct NewsArticle {
@@ -41,6 +45,11 @@ struct NewsArticle {
 }
 
 impl Summary for NewsArticle {
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.author)
+    }
+
+    // optional to implement since there's a default
     fn summarize(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
