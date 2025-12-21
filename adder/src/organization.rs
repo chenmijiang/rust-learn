@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 pub fn add_two(a: u64) -> u64 {
     internal_adder(a, 2)
 }
