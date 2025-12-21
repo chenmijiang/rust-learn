@@ -1,3 +1,5 @@
+mod organization;
+
 pub struct Guess {
     #[allow(dead_code)]
     value: i32,
