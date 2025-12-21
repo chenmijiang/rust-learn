@@ -15,6 +15,10 @@ impl Guess {
     }
 }
 
+pub fn add(left: u64, right: u64) -> u64 {
+    left + right
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -23,5 +27,16 @@ mod tests {
     #[should_panic(expected = "less than or equal to 100")]
     fn greater_than_100() {
         Guess::new(200);
+    }
+
+    #[test]
+    fn it_works() -> Result<(), String> {
+        let result = add(3, 2);
+
+        if result == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
     }
 }
